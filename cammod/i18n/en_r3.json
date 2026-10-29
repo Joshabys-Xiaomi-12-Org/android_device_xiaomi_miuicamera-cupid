@@ -1,0 +1,16 @@
+{
+  "india_title": "India filters",
+  "india_summary": "Add the India filter set (Nature, Sunny, Pink, Intense, Tea) next to the normal filters",
+  "shutter_title": "1/8000 shutter speed",
+  "shutter_summary": "Let Pro modes use shutter speeds down to 1/8000 s",
+  "zoom_title": "10x zoom in video modes",
+  "zoom_summary": "Raise the 6x zoom limit of Video, Pro video and other video modes to 10x",
+  "subtitles_title": "Video subtitles",
+  "subtitles_summary": "Show the real-time subtitles option in Video mode. It uses Xiaomi's online speech service, which may not work on this phone",
+  "render_v2_title": "Render engine v2",
+  "render_v2_summary": "Use the new preview renderer and allow importing Log LUTs in Pro video. Changes the preview in every mode",
+  "burst55_title": "Fixed-interval burst (55 ms)",
+  "burst55_summary": "Take burst shots at a fixed 55 ms interval, about 18 per second",
+  "true_color_title": "Dolby Vision video",
+  "true_color_summary": "Add the Dolby Vision option to Settings > Video. It replaces HLG, and recording may not work on this phone"
+}

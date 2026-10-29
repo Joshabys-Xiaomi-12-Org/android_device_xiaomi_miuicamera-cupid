@@ -4,6 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+
+# Patch 0008 touches profile classes with non-ASCII names; git would quote them in the
+# --numstat output extract_utils reads, so keep paths verbatim for every git call.
+os.environ.update(GIT_CONFIG_COUNT='1', GIT_CONFIG_KEY_0='core.quotepath', GIT_CONFIG_VALUE_0='false')
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
