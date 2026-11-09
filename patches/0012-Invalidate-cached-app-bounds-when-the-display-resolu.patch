@@ -1,0 +1,64 @@
+From 29a843d2a37642bb0fb6f54d090f082da04c0aa1 Mon Sep 17 00:00:00 2001
+From: acerhizmq <acerhizm@protonmail.com>
+Date: Mon, 9 Nov 2026 11:06:12 +0300
+Subject: [PATCH] Invalidate cached app bounds when the display resolution
+ changes
+
+The camera caches the window bounds in its preferences on first launch and
+only recomputes them when persist.sys.miui_resolution or the device name
+changes. On non-MIUI ROMs the property is always empty, so after switching
+the screen resolution the UI keeps the old bounds and is laid out wrongly
+until the app data is cleared.
+
+Append the real display size to the stored resolution key so the cache is
+rebuilt whenever the resolution changes.
+---
+ smali/g1/b.smali | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
+
+diff --git a/smali/g1/b.smali b/smali/g1/b.smali
+index dfa9be0..c830176 100644
+--- a/smali/g1/b.smali
++++ b/smali/g1/b.smali
+@@ -2703,6 +2703,38 @@
+ 
+     move-result-object v4
+ 
++    # The cached app bounds are only invalidated when persist.sys.miui_resolution changes,
++    # which never happens outside MIUI. Key the cache on the real display size as well.
++    new-instance v15, Ljava/lang/StringBuilder;
++
++    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
++
++    move-object/from16 v16, v4
++
++    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    const-string v16, "|"
++
++    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    sget v16, Lg1/b;->u:I
++
++    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
++
++    const-string v16, "x"
++
++    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    sget v16, Lg1/b;->v:I
++
++    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
++
++    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v4
++
++    const-string v15, "device_name"
++
+     sget-object v5, Lmb/c;->a:Ljava/lang/String;
+ 
+     invoke-static {v14, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+-- 
+2.53.0
+

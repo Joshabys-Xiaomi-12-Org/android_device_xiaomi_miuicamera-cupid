@@ -1,0 +1,239 @@
+{
+ "ar": {
+  "director_summary": "أضف وضع المخرج إلى صفحة المزيد من الأوضاع. يتطلب التصوير متعدد الأجهزة خدمات Xiaomi غير متوفرة على هذا الهاتف، لذا يبقى مخفيًا"
+ },
+ "as-rIN": {
+  "director_summary": "অধিক মোড পৃষ্ঠাত ডিৰেক্টৰ মোড যোগ কৰক। মাল্টি-ডিভাইচ শ্বুটিঙৰ বাবে Xiaomi সেৱা লাগে, যিটো এই ফোনত নাই, গতিকে ই লুকাই থাকে"
+ },
+ "az-rAZ": {
+  "director_summary": "Rejissor rejimini \"Daha çox\" rejimlər səhifəsinə əlavə edin. Çoxcihazlı çəkiliş bu telefonda olmayan Xiaomi xidmətlərini tələb edir, ona görə gizli qalır"
+ },
+ "be": {
+  "director_summary": "Дадаць рэжым рэжысёра на старонку «Больш рэжымаў». Здымка з некалькіх прылад патрабуе службаў Xiaomi, якіх няма на гэтым тэлефоне, таму рэжым застаецца схаваным"
+ },
+ "bg": {
+  "director_summary": "Добавяне на режим „Режисьор“ към страницата с още режими. Заснемането с няколко устройства изисква услуги на Xiaomi, които този телефон няма, затова режимът остава скрит"
+ },
+ "bn-rBD": {
+  "director_summary": "আরও মোড পৃষ্ঠায় ডিরেক্টর মোড যোগ করুন। মাল্টি-ডিভাইস শুটিংয়ের জন্য Xiaomi পরিষেবা প্রয়োজন, যা এই ফোনে নেই, তাই এটি লুকানো থাকে"
+ },
+ "bn-rIN": {
+  "director_summary": "আরও মোড পৃষ্ঠায় ডিরেক্টর মোড যোগ করুন। মাল্টি-ডিভাইস শুটিংয়ের জন্য Xiaomi পরিষেবা প্রয়োজন, যা এই ফোনে নেই, তাই এটি লুকানো থাকে"
+ },
+ "bo-rCN": {
+  "director_summary": "ཐབས་ལམ་གཞན་ཤོག་ངོས་སུ་ཁྲིད་སྟོན་པའི་ཐབས་ལམ་སྣོན། ཅ་དངོས་མང་པོའི་པར་ལེན་ལ་Xiaomiའི་ཞབས་ཞུ་དགོས་ཀྱང་ཁ་པར་འདིར་མེད་པས་སྦས་ནས་འདུག"
+ },
+ "bs": {
+  "director_summary": "Dodajte Režiserski način na stranicu Više načina. Snimanje s više uređaja zahtijeva Xiaomi usluge koje ovaj telefon nema, pa ostaje skriveno"
+ },
+ "ca": {
+  "director_summary": "Afegeix el mode Director a la pàgina Més modes. La gravació amb diversos dispositius requereix serveis de Xiaomi que aquest telèfon no té, per això continua ocult"
+ },
+ "cs": {
+  "director_summary": "Přidat režim Režisér na stránku Další režimy. Natáčení s více zařízeními vyžaduje služby Xiaomi, které tento telefon nemá, proto zůstává skrytý"
+ },
+ "da": {
+  "director_summary": "Føj Instruktørtilstand til siden Flere tilstande. Optagelse med flere enheder kræver Xiaomi-tjenester, som denne telefon ikke har, så den forbliver skjult"
+ },
+ "de": {
+  "director_summary": "Regie-Modus zur Seite „Mehr“ hinzufügen. Aufnahmen mit mehreren Geräten erfordern Xiaomi-Dienste, die auf diesem Telefon nicht verfügbar sind, daher bleibt der Modus ausgeblendet"
+ },
+ "el": {
+  "director_summary": "Προσθήκη της λειτουργίας Σκηνοθέτη στη σελίδα Περισσότερες λειτουργίες. Η λήψη με πολλές συσκευές απαιτεί υπηρεσίες Xiaomi που δεν υπάρχουν σε αυτό το τηλέφωνο, γι' αυτό παραμένει κρυφή"
+ },
+ "en-rAU": {
+  "director_summary": "Add Director mode to the More modes page. Multi-device shooting needs Xiaomi services that this phone doesn't have, so it stays hidden"
+ },
+ "en-rGB": {
+  "director_summary": "Add Director mode to the More modes page. Multi-device shooting needs Xiaomi services that this phone doesn't have, so it stays hidden"
+ },
+ "en-rIN": {
+  "director_summary": "Add Director mode to the More modes page. Multi-device shooting needs Xiaomi services that this phone doesn't have, so it stays hidden"
+ },
+ "es": {
+  "director_summary": "Añadir el modo Director a la página Más modos. La grabación con varios dispositivos necesita servicios de Xiaomi que este teléfono no tiene, por lo que permanece oculta"
+ },
+ "es-rUS": {
+  "director_summary": "Agregar el modo Director a la página Más modos. La grabación con varios dispositivos necesita servicios de Xiaomi que este teléfono no tiene, por lo que permanece oculta"
+ },
+ "et-rEE": {
+  "director_summary": "Lisa režissöörirežiim lehele Rohkem režiime. Mitme seadmega filmimiseks on vaja Xiaomi teenuseid, mida sellel telefonil pole, seega jääb see peidetuks"
+ },
+ "eu-rES": {
+  "director_summary": "Gehitu Zuzendari modua Modu gehiago orrian. Gailu anitzeko grabaketak Xiaomi zerbitzuak behar ditu, eta telefono honek ez ditu, beraz ezkutuan geratzen da"
+ },
+ "fa-rIR": {
+  "director_summary": "حالت کارگردان را به صفحه حالت‌های بیشتر اضافه کنید. فیلم‌برداری چنددستگاهی به سرویس‌های Xiaomi نیاز دارد که این گوشی ندارد، بنابراین پنهان می‌ماند"
+ },
+ "fi": {
+  "director_summary": "Lisää Ohjaajatila Lisää tiloja -sivulle. Usean laitteen kuvaus vaatii Xiaomi-palveluita, joita tässä puhelimessa ei ole, joten se pysyy piilossa"
+ },
+ "fr": {
+  "director_summary": "Ajouter le mode Réalisateur à la page Plus de modes. La prise de vue multi-appareils nécessite des services Xiaomi absents de ce téléphone ; elle reste donc masquée"
+ },
+ "gl-rES": {
+  "director_summary": "Engadir o modo Director á páxina Máis modos. A gravación con varios dispositivos require servizos de Xiaomi que este teléfono non ten, polo que permanece oculta"
+ },
+ "gu-rIN": {
+  "director_summary": "વધુ મોડ પેજમાં ડિરેક્ટર મોડ ઉમેરો. મલ્ટી-ડિવાઇસ શૂટિંગ માટે Xiaomi સેવાઓ જરૂરી છે, જે આ ફોનમાં નથી, તેથી તે છુપાયેલું રહે છે"
+ },
+ "ha-rNG": {
+  "director_summary": "Ƙara yanayin Darakta a shafin Ƙarin yanayi. Daukar hoto da na'urori da yawa na buƙatar sabis na Xiaomi wanda wannan wayar ba ta da shi, saboda haka yana ɓoye"
+ },
+ "hi": {
+  "director_summary": "और मोड पेज में डायरेक्टर मोड जोड़ें। मल्टी-डिवाइस शूटिंग के लिए Xiaomi सेवाएँ चाहिए, जो इस फ़ोन में नहीं हैं, इसलिए यह छिपा रहता है"
+ },
+ "hr": {
+  "director_summary": "Dodaj Redateljski način na stranicu Više načina. Snimanje s više uređaja zahtijeva Xiaomi usluge koje ovaj telefon nema, pa ostaje skriveno"
+ },
+ "hu": {
+  "director_summary": "Rendező mód hozzáadása a További módok oldalhoz. A több eszközös felvételhez Xiaomi-szolgáltatások kellenek, amelyek ezen a telefonon nincsenek, ezért rejtve marad"
+ },
+ "hy-rAM": {
+  "director_summary": "Ավելացնել «Ռեժիսոր» ռեժիմը «Այլ ռեժիմներ» էջում։ Բազմասարք նկարահանումը պահանջում է Xiaomi ծառայություններ, որոնք այս հեռախոսում չկան, ուստի այն մնում է թաքցված"
+ },
+ "in": {
+  "director_summary": "Tambahkan mode Sutradara ke halaman Mode lainnya. Pengambilan gambar multiperangkat memerlukan layanan Xiaomi yang tidak ada di ponsel ini, sehingga tetap disembunyikan"
+ },
+ "it": {
+  "director_summary": "Aggiungi la modalità Regista alla pagina Altre modalità. Le riprese con più dispositivi richiedono servizi Xiaomi che questo telefono non ha, quindi resta nascosta"
+ },
+ "iw-rIL": {
+  "director_summary": "הוספת מצב במאי לדף מצבים נוספים. צילום ממספר מכשירים דורש שירותי Xiaomi שאינם קיימים בטלפון הזה, ולכן הוא נשאר מוסתר"
+ },
+ "ja": {
+  "director_summary": "ディレクターモードを「その他」ページに追加します。マルチデバイス撮影にはXiaomiのサービスが必要ですが、この端末にはないため非表示のままです"
+ },
+ "ka-rGE": {
+  "director_summary": "დაამატეთ რეჟისორის რეჟიმი „სხვა რეჟიმების“ გვერდზე. მრავალმოწყობილობიანი გადაღება საჭიროებს Xiaomi-ს სერვისებს, რომლებიც ამ ტელეფონზე არ არის, ამიტომ ის დამალული რჩება"
+ },
+ "kk-rKZ": {
+  "director_summary": "«Қосымша режимдер» бетіне «Режиссер» режимін қосу. Көп құрылғымен түсіру үшін Xiaomi қызметтері қажет, бірақ бұл телефонда олар жоқ, сондықтан режим жасырын болып қалады"
+ },
+ "km-rKH": {
+  "director_summary": "បន្ថែមមុខងារអ្នកដឹកនាំទៅទំព័រមុខងារបន្ថែម។ ការថតច្រើនឧបករណ៍ត្រូវការសេវា Xiaomi ដែលទូរសព្ទនេះមិនមាន ដូច្នេះវាត្រូវបានលាក់"
+ },
+ "kn-rIN": {
+  "director_summary": "ಇನ್ನಷ್ಟು ಮೋಡ್‌ಗಳ ಪುಟಕ್ಕೆ ಡೈರೆಕ್ಟರ್ ಮೋಡ್ ಸೇರಿಸಿ. ಬಹು-ಸಾಧನ ಶೂಟಿಂಗ್‌ಗೆ Xiaomi ಸೇವೆಗಳು ಬೇಕು, ಅವು ಈ ಫೋನ್‌ನಲ್ಲಿ ಇಲ್ಲ, ಆದ್ದರಿಂದ ಇದು ಮರೆಯಾಗಿರುತ್ತದೆ"
+ },
+ "ko": {
+  "director_summary": "더보기 페이지에 디렉터 모드를 추가합니다. 멀티 기기 촬영에는 Xiaomi 서비스가 필요한데 이 휴대전화에는 없어서 숨겨진 상태로 유지됩니다"
+ },
+ "lo-rLA": {
+  "director_summary": "ເພີ່ມໂໝດຜູ້ກຳກັບໃສ່ໜ້າໂໝດເພີ່ມເຕີມ. ການຖ່າຍຫຼາຍອຸປະກອນຕ້ອງໃຊ້ບໍລິການ Xiaomi ເຊິ່ງໂທລະສັບເຄື່ອງນີ້ບໍ່ມີ ຈຶ່ງຖືກຊ່ອນໄວ້"
+ },
+ "lt": {
+  "director_summary": "Pridėti režisieriaus režimą į puslapį „Daugiau režimų“. Filmuojant keliais įrenginiais reikia „Xiaomi“ paslaugų, kurių šiame telefone nėra, todėl režimas lieka paslėptas"
+ },
+ "lv": {
+  "director_summary": "Pievienot režisora režīmu lapai „Citi režīmi“. Uzņemšanai ar vairākām ierīcēm ir vajadzīgi Xiaomi pakalpojumi, kuru šajā tālrunī nav, tāpēc režīms paliek paslēpts"
+ },
+ "mk-rMK": {
+  "director_summary": "Додадете режим Режисер на страницата Повеќе режими. Снимањето со повеќе уреди бара услуги на Xiaomi што ги нема овој телефон, па остануваат скриено"
+ },
+ "ml-rIN": {
+  "director_summary": "കൂടുതൽ മോഡുകൾ പേജിലേക്ക് ഡയറക്ടർ മോഡ് ചേർക്കുക. മൾട്ടി-ഡിവൈസ് ഷൂട്ടിംഗിന് Xiaomi സേവനങ്ങൾ ആവശ്യമാണ്, ഈ ഫോണിൽ അവ ഇല്ലാത്തതിനാൽ ഇത് മറച്ചുവച്ചിരിക്കുന്നു"
+ },
+ "mr-rIN": {
+  "director_summary": "अधिक मोड पृष्ठावर डायरेक्टर मोड जोडा. मल्टी-डिव्हाइस शूटिंगसाठी Xiaomi सेवा आवश्यक आहेत, त्या या फोनवर नाहीत, म्हणून ते लपलेले राहते"
+ },
+ "ms-rMY": {
+  "director_summary": "Tambah mod Pengarah ke halaman Lagi mod. Penggambaran berbilang peranti memerlukan perkhidmatan Xiaomi yang tiada pada telefon ini, jadi ia kekal tersembunyi"
+ },
+ "mt-rMT": {
+  "director_summary": "Żid il-modalità Direttur mal-paġna Aktar modalitajiet. Ir-reġistrazzjoni b'diversi apparati teħtieġ servizzi ta' Xiaomi li dan it-telefon m'għandux, għalhekk tibqa' moħbija"
+ },
+ "my-rMM": {
+  "director_summary": "နောက်ထပ်မုဒ်များစာမျက်နှာသို့ ဒါရိုက်တာမုဒ် ထည့်ပါ။ စက်ပစ္စည်းအများအပြားဖြင့် ရိုက်ကူးရန် ဤဖုန်းတွင်မရှိသော Xiaomi ဝန်ဆောင်မှုများ လိုအပ်သဖြင့် ဖျောက်ထားပါသည်"
+ },
+ "nb": {
+  "director_summary": "Legg til Regissørmodus på siden Flere moduser. Opptak med flere enheter krever Xiaomi-tjenester som denne telefonen ikke har, så den forblir skjult"
+ },
+ "ne-rIN": {
+  "director_summary": "थप मोड पृष्ठमा डाइरेक्टर मोड थप्नुहोस्। बहु-उपकरण सुटिङका लागि Xiaomi सेवाहरू चाहिन्छ, जुन यो फोनमा छैन, त्यसैले यो लुकेको रहन्छ"
+ },
+ "ne-rNP": {
+  "director_summary": "थप मोड पृष्ठमा डाइरेक्टर मोड थप्नुहोस्। बहु-उपकरण सुटिङका लागि Xiaomi सेवाहरू चाहिन्छ, जुन यो फोनमा छैन, त्यसैले यो लुकेको रहन्छ"
+ },
+ "nl": {
+  "director_summary": "Regisseursmodus toevoegen aan de pagina Meer modi. Opnemen met meerdere apparaten vereist Xiaomi-services die deze telefoon niet heeft, dus blijft de modus verborgen"
+ },
+ "or-rIN": {
+  "director_summary": "ଅଧିକ ମୋଡ୍ ପୃଷ୍ଠାରେ ଡାଇରେକ୍ଟର ମୋଡ୍ ଯୋଗ କରନ୍ତୁ। ମଲ୍ଟି-ଡିଭାଇସ୍ ସୁଟିଂ ପାଇଁ Xiaomi ସେବା ଆବଶ୍ୟକ, ଯାହା ଏହି ଫୋନ୍‌ରେ ନାହିଁ, ତେଣୁ ଏହା ଲୁଚିଥାଏ"
+ },
+ "pa-rIN": {
+  "director_summary": "ਹੋਰ ਮੋਡ ਪੰਨੇ ਵਿੱਚ ਡਾਇਰੈਕਟਰ ਮੋਡ ਸ਼ਾਮਲ ਕਰੋ। ਮਲਟੀ-ਡਿਵਾਈਸ ਸ਼ੂਟਿੰਗ ਲਈ Xiaomi ਸੇਵਾਵਾਂ ਚਾਹੀਦੀਆਂ ਹਨ, ਜੋ ਇਸ ਫ਼ੋਨ ਵਿੱਚ ਨਹੀਂ ਹਨ, ਇਸ ਲਈ ਇਹ ਲੁਕਿਆ ਰਹਿੰਦਾ ਹੈ"
+ },
+ "pl": {
+  "director_summary": "Dodaj tryb Reżyser do strony Więcej trybów. Nagrywanie z wielu urządzeń wymaga usług Xiaomi, których nie ma w tym telefonie, więc tryb pozostaje ukryty"
+ },
+ "pt-rBR": {
+  "director_summary": "Adicionar o modo Diretor à página Mais modos. A gravação com vários dispositivos precisa de serviços da Xiaomi que este telefone não tem, por isso ela permanece oculta"
+ },
+ "pt-rPT": {
+  "director_summary": "Adicionar o modo Realizador à página Mais modos. A gravação com vários dispositivos requer serviços Xiaomi que este telemóvel não tem, pelo que permanece oculta"
+ },
+ "ro": {
+  "director_summary": "Adaugă modul Regizor în pagina Mai multe moduri. Filmarea cu mai multe dispozitive necesită servicii Xiaomi care lipsesc de pe acest telefon, așa că rămâne ascunsă"
+ },
+ "ru": {
+  "director_summary": "Добавить режим «Режиссёр» на страницу «Ещё». Съёмка с несколькими устройствами требует сервисов Xiaomi, которых нет на этом телефоне, поэтому режим остаётся скрытым"
+ },
+ "sk": {
+  "director_summary": "Pridať režim Režisér na stránku Ďalšie režimy. Natáčanie s viacerými zariadeniami vyžaduje služby Xiaomi, ktoré tento telefón nemá, preto zostáva skrytý"
+ },
+ "sl": {
+  "director_summary": "Dodaj način Režiser na stran Več načinov. Snemanje z več napravami zahteva storitve Xiaomi, ki jih ta telefon nima, zato ostaja skrito"
+ },
+ "sq-rAL": {
+  "director_summary": "Shto modalitetin Regjisor te faqja Më shumë modalitete. Filmimi me shumë pajisje kërkon shërbime të Xiaomi që ky telefon nuk i ka, ndaj mbetet i fshehur"
+ },
+ "sr": {
+  "director_summary": "Додај режим Редитељ на страницу Више режима. Снимање са више уређаја захтева Xiaomi услуге које овај телефон нема, па остаје скривено"
+ },
+ "sv": {
+  "director_summary": "Lägg till Regissörsläge på sidan Fler lägen. Filmning med flera enheter kräver Xiaomi-tjänster som den här telefonen inte har, så det förblir dolt"
+ },
+ "sw": {
+  "director_summary": "Ongeza hali ya Mkurugenzi kwenye ukurasa wa Hali zaidi. Kupiga picha kwa vifaa vingi kunahitaji huduma za Xiaomi ambazo simu hii haina, kwa hivyo inabaki imefichwa"
+ },
+ "ta-rIN": {
+  "director_summary": "மேலும் பயன்முறைகள் பக்கத்தில் இயக்குநர் பயன்முறையைச் சேர்க்கவும். பல சாதன படப்பிடிப்புக்கு Xiaomi சேவைகள் தேவை, அவை இந்த ஃபோனில் இல்லாததால் இது மறைந்தே இருக்கும்"
+ },
+ "te-rIN": {
+  "director_summary": "మరిన్ని మోడ్‌ల పేజీకి డైరెక్టర్ మోడ్‌ను జోడించండి. బహుళ-పరికర షూటింగ్‌కు Xiaomi సేవలు అవసరం, అవి ఈ ఫోన్‌లో లేవు, కాబట్టి ఇది దాగి ఉంటుంది"
+ },
+ "th": {
+  "director_summary": "เพิ่มโหมดผู้กำกับในหน้าโหมดเพิ่มเติม การถ่ายหลายอุปกรณ์ต้องใช้บริการของ Xiaomi ซึ่งโทรศัพท์เครื่องนี้ไม่มี จึงยังคงซ่อนอยู่"
+ },
+ "tr": {
+  "director_summary": "Yönetmen modunu Daha fazla sayfasına ekler. Çoklu cihazla çekim bu telefonda olmayan Xiaomi servislerini gerektirdiği için gizli kalır"
+ },
+ "ug-rCN": {
+  "director_summary": "«تېخىمۇ كۆپ ھالەت» بېتىگە «رېژىسسور ھالىتى»نى قوشۇش. كۆپ ئۈسكۈنىلىك سۈرەتكە ئېلىش ئۈچۈن Xiaomi مۇلازىمىتى كېرەك، بۇ تېلېفوندا ئۇ يوق، شۇڭا يوشۇرۇن تۇرىدۇ"
+ },
+ "uk": {
+  "director_summary": "Додати режим «Режисер» на сторінку «Більше режимів». Зйомка з кількох пристроїв потребує служб Xiaomi, яких немає на цьому телефоні, тому режим залишається прихованим"
+ },
+ "ur-rIN": {
+  "director_summary": "مزید موڈز کے صفحے میں ڈائریکٹر موڈ شامل کریں۔ ملٹی ڈیوائس شوٹنگ کے لیے Xiaomi سروسز درکار ہیں جو اس فون میں نہیں ہیں، اس لیے یہ چھپا رہتا ہے"
+ },
+ "ur-rPK": {
+  "director_summary": "مزید موڈز کے صفحے میں ڈائریکٹر موڈ شامل کریں۔ ملٹی ڈیوائس شوٹنگ کے لیے Xiaomi سروسز درکار ہیں جو اس فون میں نہیں ہیں، اس لیے یہ چھپا رہتا ہے"
+ },
+ "uz-rUZ": {
+  "director_summary": "Director rejimini «Boshqa rejimlar» sahifasiga qo‘shish. Bir nechta qurilmada suratga olish uchun Xiaomi xizmatlari kerak, ular bu telefonda yo‘q, shuning uchun u yashirin qoladi"
+ },
+ "vi": {
+  "director_summary": "Thêm chế độ Đạo diễn vào trang Thêm chế độ. Quay đa thiết bị cần các dịch vụ của Xiaomi mà điện thoại này không có, nên chế độ vẫn bị ẩn"
+ },
+ "zh-rCN": {
+  "director_summary": "将导演模式添加到“更多”页面。多设备拍摄需要小米服务，而此手机不具备，因此仍保持隐藏"
+ },
+ "zh-rHK": {
+  "director_summary": "將導演模式加入「更多」頁面。多裝置拍攝需要小米服務，而此手機並不具備，因此維持隱藏"
+ },
+ "zh-rTW": {
+  "director_summary": "將導演模式加入「更多」頁面。多裝置拍攝需要小米服務，而此手機並不具備，因此維持隱藏"
+ }
+}

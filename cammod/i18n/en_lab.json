@@ -1,0 +1,17 @@
+{
+  "lab_hint": "Experimental feature",
+  "lab_video_capture_repeating": "Take photos at intervals while recording",
+  "lab_facedetection": "Face detection",
+  "lab_facedetection_auto_hidden": "Hide face detection frame automatically",
+  "lab_video_show_faceview": "Show face frame in Video mode",
+  "lab_portrait_with_facebeauty": "Beautify in Portrait mode",
+  "lab_dual_enable": "Turn on dual camera",
+  "lab_dual_sat_enable": "Turn on dual SAT camera",
+  "lab_mfnr_sat_enable": "Turn on MFNR",
+  "lab_sr_enable": "Turn on SR",
+  "lab_parallel_process_enable": "Turn on parallel processing",
+  "lab_quick_shot_anim_enable": "Turn on quick shot animation",
+  "lab_video_sat_enable": "Turn on smooth zoom for video",
+  "lab_touch_focus_delay": "Extend touch focus timeout",
+  "lab_quick_shot_enable": "Turn on quick shot"
+}
