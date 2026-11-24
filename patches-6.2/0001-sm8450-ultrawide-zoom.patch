@@ -1,0 +1,24 @@
+From: miuicamera-cupid
+Subject: [PATCH 1/3] Adjust ultra-wide minimum zoom for cupid, mayfly, and unicorn
+
+HyperOS Leica Camera 6.2 (1+6.2.000360.1) defaults ultra-wide minimum zoom to
+0.5f in classes3.dex (methods i1, n1, q0) for cupid, mayfly, and unicorn, which
+is below the SM8450/SM8475 Camera HAL minimum zoom ratio.
+
+Change const/high16 0.5f (0x3f000000) to:
+- cupid (Xiaomi 12):      0.625f   (0x3f200000) @ 0x72a636, 0x72a9ca, 0x72ab8a
+- mayfly (Xiaomi 12S):    0.625f   (0x3f200000) @ 0x746142, 0x7464d6, 0x746696
+- unicorn (12S Pro):      0.65625f (0x3f280000) @ 0x767fa2, 0x768336, 0x7684f6
+(zeus already uses 0.65f; thor natively supports 0.5x.)
+
+--- a/classes3.dex (cupid / mayfly: i1, n1, q0)
++++ b/classes3.dex (cupid / mayfly: i1, n1, q0)
+@@ -1 +1 @@
+-    const/high16 v0, 0x3f000000    # 0.5f   (1500 003f)
++    const/high16 v0, 0x3f200000    # 0.625f (1500 203f)
+
+--- a/classes3.dex (unicorn: i1, n1, q0)
++++ b/classes3.dex (unicorn: i1, n1, q0)
+@@ -1 +1 @@
+-    const/high16 v0, 0x3f000000    # 0.5f     (1500 003f)
++    const/high16 v0, 0x3f280000    # 0.65625f (1500 283f)

@@ -1,6 +1,6 @@
-# All unpinned blobs below are extracted from marble OS3.0.4.0.VMRMIXM
+# All unpinned blobs below are extracted from cupid OS3.0.4.0.VLCMIXM
 
-product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture
+product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk
 system_ext/lib64/libcamera_algoup_jni.xiaomi.so:system/lib64/libcamera_algoup_jni.xiaomi.so
 system_ext/lib64/libcamera_mianode_jni.xiaomi.so:system/lib64/libcamera_mianode_jni.xiaomi.so
 system_ext/lib64/libmicampostproc_client.so:system/lib64/libmicampostproc_client.so

@@ -1,0 +1,20 @@
+From: miuicamera-cupid
+Subject: [PATCH 3/3] Fallback to 23mm focal length in Leica watermark EXIF when HAL omits focalLength35mm
+
+`k5.c.b(CaptureResult)` reads 35mm focal length from vendor tag
+`com.xiaomi.sensor.info.focalLength35mm` (`w5.G.c`). On cupid's HAL this tag
+is absent, yielding `focal = 0`. In `Gb.c.i(int focal, String speed, float aperture, int iso)`,
+`if (focal <= 0)` clears the entire EXIF string to `""` and returns early, hiding
+aperture, shutter speed, and ISO as well.
+
+Fallback to 23mm when `focal <= 0` and continue formatting the real aperture,
+shutter speed, and ISO from Camera2 CaptureResult. Devices whose HAL provides
+`focalLength35mm` still take the normal path (`focal > 0`).
+
+--- a/classes5.dex (Gb.c.i:(ILjava/lang/String;FI)V @ 0x3c95da)
++++ b/classes5.dex (Gb.c.i:(ILjava/lang/String;FI)V @ 0x3c95da)
+@@ -1,2 +1,2 @@
+-    iput-object v4, v7, LGb/k;.n:Ljava/lang/String;   # 5b74 0204
+-    return-void                                       # 0e00
++    const/16 v8, 0x17                                 # 1308 1700 (23mm)
++    goto :cond_0040                                   # 28f1

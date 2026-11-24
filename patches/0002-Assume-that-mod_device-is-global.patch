@@ -1,7 +1,7 @@
-From 6d124e8a4676252bafd924ca07f3be2d12f898de Mon Sep 17 00:00:00 2001
+From 403b5a11f668352856ba6b733893c6714a2c8e01 Mon Sep 17 00:00:00 2001
 From: danielml <daniel@danielml.dev>
 Date: Fri, 19 Apr 2024 17:32:08 +0200
-Subject: [PATCH 2/7] Assume that mod_device is global
+Subject: [PATCH 02/11] Assume that mod_device is global
 
 Otherwise, the app tries to start a custom permissions dialog which
 has dependencies on HyperOS Security Center app
@@ -9,21 +9,33 @@ has dependencies on HyperOS Security Center app
 Change-Id: I8962a6e409f5aa30f84fccd482fefe78767069c2
 Signed-off-by: danielml <daniel@danielml.dev>
 ---
- smali_classes3/mb/c.smali | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ smali_classes4/qb/c.smali | 14 +-------------
+ 1 file changed, 1 insertion(+), 13 deletions(-)
 
-diff --git a/smali_classes3/mb/c.smali b/smali_classes3/mb/c.smali
-index 010a2c018..eb4b2b087 100644
---- a/smali_classes3/mb/c.smali
-+++ b/smali_classes3/mb/c.smali
-@@ -566,7 +566,7 @@
+diff --git a/smali_classes4/qb/c.smali b/smali_classes4/qb/c.smali
+index 37b73d096..cbe6d74e6 100644
+--- a/smali_classes4/qb/c.smali
++++ b/smali_classes4/qb/c.smali
+@@ -554,19 +554,7 @@
  
-     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+     sput-boolean v0, Lqb/c;->D:Z
  
+-    const-string v0, "ro.product.mod_device"
+-
+-    const-string v1, ""
+-
+-    invoke-static {v0, v1}, Lce/f;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    const-string v1, "_global"
+-
+-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+-
 -    move-result v0
 +    const/4 v0, 0x1
  
-     sput-boolean v0, Lmb/c;->E:Z
+     sput-boolean v0, Lqb/c;->E:Z
  
 -- 
 2.47.3
