@@ -1,5 +1,5 @@
 From: miuicamera-cupid
-Subject: [PATCH 2/3] Enable GPU Leica Authentic engine (CvStyleFilterRender) on non-Leica HALs
+Subject: [PATCH 2/6] Enable GPU Leica Authentic engine (CvStyleFilterRender) on non-Leica HALs
 
 Pre-Leica SM8450 HALs (such as cupid) do not implement the vendor session tag
 `com.xiaomi.sessionparams.stylizationType`. MiuiCamera 6.2 includes a built-in

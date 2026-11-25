@@ -1,5 +1,5 @@
 From: miuicamera-cupid
-Subject: [PATCH 4/4] Fix Ultra HD (50MP) green/corrupted capture when remosaic is disabled
+Subject: [PATCH 4/6] Fix Ultra HD (50MP) green/corrupted capture when remosaic is disabled
 
 The base zeus patch unconditionally forced w5.s0.x() (ShotParallelStill) to
 jump to stream 1 (8192x6144) because stream 5 is null in Portrait mode.

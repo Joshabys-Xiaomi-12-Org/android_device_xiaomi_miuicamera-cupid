@@ -1,5 +1,5 @@
 From: miuicamera-cupid
-Subject: [PATCH 3/3] Fallback to 23mm focal length in Leica watermark EXIF when HAL omits focalLength35mm
+Subject: [PATCH 3/6] Fallback to 23mm focal length in Leica watermark EXIF when HAL omits focalLength35mm
 
 `k5.c.b(CaptureResult)` reads 35mm focal length from vendor tag
 `com.xiaomi.sensor.info.focalLength35mm` (`w5.G.c`). On cupid's HAL this tag

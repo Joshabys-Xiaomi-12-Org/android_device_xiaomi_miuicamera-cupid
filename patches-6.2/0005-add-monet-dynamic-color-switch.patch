@@ -1,7 +1,7 @@
 From: miuicamera-cupid
-Subject: [PATCH 5/5] Add in-app Monet dynamic color switch and disable manual color picker when active
+Subject: [PATCH 5/6] Add in-app Monet dynamic color switch and disable manual color picker when active
 
-1. com.android.camera.data.data.t.v():
+1. com.android.camera.data.data.t.v() (classes.dex):
    Check DataItemGlobal boolean "pref_monet_color_key" (default true).
    When enabled, return Global.getApplication().getColor(android.R.color.system_accent1_200)
    (0x0106003b). When disabled, fall through to stock "pref_tint_color" selection
@@ -11,3 +11,487 @@ Subject: [PATCH 5/5] Add in-app Monet dynamic color switch and disable manual co
    Add CheckBoxPreference "pref_monet_color_key" right above "pref_tint_color"
    (localized in pt/en), and automatically call setEnabled(!isMonet) on
    "pref_tint_color" both on screen load and live when toggled.
+
+---
+diff --git a/smali/com/android/camera/data/data/t.smali b/smali/com/android/camera/data/data/t.smali
+index c757d36..f9ef7bd 100644
+--- a/smali/com/android/camera/data/data/t.smali
++++ b/smali/com/android/camera/data/data/t.smali
+@@ -3505,6 +3505,29 @@
+ 
+     move-result-object v0
+ 
++    const-string v1, "pref_monet_color_key"
++
++    const/4 v2, 0x1
++
++    invoke-virtual {v0, v1, v2}, Lb9/a;->g(Ljava/lang/String;Z)Z
++
++    move-result v1
++
++    if-eqz v1, :cond_19
++
++    invoke-static {}, Lcom/xiaomi/camera/basic/Global;->getApplication()Landroid/app/Application;
++
++    move-result-object v0
++
++    const v1, 0x106003b
++
++    invoke-virtual {v0, v1}, Landroid/app/Application;->getColor(I)I
++
++    move-result v0
++
++    return v0
++
++    :cond_19
+     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+ 
+     sget-boolean v1, LG6/c;->i:Z
+@@ -3517,7 +3540,7 @@
+ 
+     move-result v2
+ 
+-    if-eqz v2, :cond_1e
++    if-eqz v2, :cond_33
+ 
+     invoke-static {}, Lcom/xiaomi/camera/basic/Global;->getApplication()Landroid/app/Application;
+ 
+@@ -3529,14 +3552,14 @@
+ 
+     move-result v1
+ 
+-    goto :goto_39
++    goto :goto_4e
+ 
+-    :cond_1e
++    :cond_33
+     invoke-virtual {v1}, LG6/c;->i1()Z
+ 
+     move-result v1
+ 
+-    if-eqz v1, :cond_2f
++    if-eqz v1, :cond_44
+ 
+     invoke-static {}, Lcom/xiaomi/camera/basic/Global;->getApplication()Landroid/app/Application;
+ 
+@@ -3548,9 +3571,9 @@
+ 
+     move-result v1
+ 
+-    goto :goto_39
++    goto :goto_4e
+ 
+-    :cond_2f
++    :cond_44
+     invoke-static {}, Lcom/xiaomi/camera/basic/Global;->getApplication()Landroid/app/Application;
+ 
+     move-result-object v1
+@@ -3561,7 +3584,7 @@
+ 
+     move-result v1
+ 
+-    :goto_39
++    :goto_4e
+     const-string v2, "pref_tint_color"
+ 
+     invoke-virtual {v0, v2, v1}, Lb9/a;->i(Ljava/lang/String;I)I
+diff --git a/smali/com/android/camera/fragment/settings/CameraCommonPreferenceFragment.smali b/smali/com/android/camera/fragment/settings/CameraCommonPreferenceFragment.smali
+index 155e853..4540e02 100644
+--- a/smali/com/android/camera/fragment/settings/CameraCommonPreferenceFragment.smali
++++ b/smali/com/android/camera/fragment/settings/CameraCommonPreferenceFragment.smali
+@@ -202,6 +202,48 @@
+     invoke-virtual {p0, v0, v2, v3, v1}, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->pb(Landroidx/preference/PreferenceCategory;Ljava/lang/String;II)V
+ 
+     :cond_9d
++    const-string v2, "pref_monet_color_key"
++
++    const/4 v3, 0x1
++
++    const v4, 0x7f140ca1
++
++    invoke-virtual {p0, v0, v2, v3, v4}, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->W9(Landroidx/preference/PreferenceGroup;Ljava/lang/String;ZI)Landroidx/preference/CheckBoxPreference;
++
++    move-result-object v2
++
++    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
++
++    move-result-object v3
++
++    invoke-virtual {v3}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
++
++    move-result-object v3
++
++    const-string v4, "pt"
++
++    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v3
++
++    if-eqz v3, :cond_bc
++
++    const-string v3, "Cores din\u00e2micas (Monet)"
++
++    const-string v4, "Usar paleta Material You do sistema"
++
++    goto :goto_c0
++
++    :cond_bc
++    const-string v3, "Dynamic colors (Monet)"
++
++    const-string v4, "Use system Material You accent palette"
++
++    :goto_c0
++    invoke-virtual {v2, v3}, Landroidx/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
++
++    invoke-virtual {v2, v4}, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
++
+     const-string v2, "pref_tint_color"
+ 
+     const v3, 0x7f140ca1
+@@ -218,24 +260,24 @@
+ 
+     move-result v2
+ 
+-    if-nez v2, :cond_ca
++    if-nez v2, :cond_f3
+ 
+     invoke-static {}, LGd/s1;->p()Z
+ 
+     move-result v2
+ 
+-    if-eqz v2, :cond_be
++    if-eqz v2, :cond_e7
+ 
+     const v2, 0x7f140d2f
+ 
+     move v7, v2
+ 
+-    goto :goto_bf
++    goto :goto_e8
+ 
+-    :cond_be
++    :cond_e7
+     move v7, v1
+ 
+-    :goto_bf
++    :goto_e8
+     const-string v4, "pref_camerasound_key"
+ 
+     const/4 v5, 0x1
+@@ -248,7 +290,7 @@
+ 
+     invoke-virtual/range {v2 .. v7}, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->ea(Landroidx/preference/PreferenceGroup;Ljava/lang/String;ZII)Landroidx/preference/CheckBoxPreference;
+ 
+-    :cond_ca
++    :cond_f3
+     iget-object v2, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->x:Lt2/e;
+ 
+     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+@@ -283,7 +325,7 @@
+ 
+     move-result v2
+ 
+-    if-eqz v2, :cond_102
++    if-eqz v2, :cond_12b
+ 
+     const v6, 0x7f140df2
+ 
+@@ -299,12 +341,12 @@
+ 
+     invoke-virtual/range {v2 .. v7}, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->ea(Landroidx/preference/PreferenceGroup;Ljava/lang/String;ZII)Landroidx/preference/CheckBoxPreference;
+ 
+-    :cond_102
++    :cond_12b
+     invoke-static {}, Lj4/x;->l()Z
+ 
+     move-result v2
+ 
+-    if-eqz v2, :cond_11b
++    if-eqz v2, :cond_144
+ 
+     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+ 
+@@ -322,7 +364,7 @@
+ 
+     invoke-virtual {p0, v0, v3, v2, v4}, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->W9(Landroidx/preference/PreferenceGroup;Ljava/lang/String;ZI)Landroidx/preference/CheckBoxPreference;
+ 
+-    :cond_11b
++    :cond_144
+     const-string v2, "pref_other_setting"
+ 
+     const v3, 0x7f140d89
+@@ -333,13 +375,13 @@
+ 
+     move-result v1
+ 
+-    if-nez v1, :cond_12e
++    if-nez v1, :cond_157
+ 
+     iget-object p0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     invoke-virtual {p0, v0}, Landroidx/preference/PreferenceGroup;->removePreference(Landroidx/preference/Preference;)Z
+ 
+-    :cond_12e
++    :cond_157
+     return-void
+ .end method
+ 
+@@ -791,7 +833,7 @@
+ 
+     move-result v7
+ 
+-    sparse-switch v7, :sswitch_data_1be
++    sparse-switch v7, :sswitch_data_1e2
+ 
+     goto :goto_56
+ 
+@@ -842,7 +884,7 @@
+     move v6, v1
+ 
+     :goto_56
+-    packed-switch v6, :pswitch_data_1cc
++    packed-switch v6, :pswitch_data_1f0
+ 
+     goto/16 :goto_1b9
+ 
+@@ -1193,20 +1235,57 @@
+ 
+     :cond_1b9
+     :goto_1b9
++    invoke-virtual {p1}, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
++
++    move-result-object v0
++
++    const-string v1, "pref_monet_color_key"
++
++    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_1dd
++
++    instance-of v0, p2, Ljava/lang/Boolean;
++
++    if-eqz v0, :cond_1dd
++
++    move-object v0, p2
++
++    check-cast v0, Ljava/lang/Boolean;
++
++    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
++
++    move-result v0
++
++    xor-int/lit8 v0, v0, 0x1
++
++    const-string v1, "pref_tint_color"
++
++    invoke-virtual {p0, v1}, Landroidx/preference/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
++
++    move-result-object v1
++
++    if-eqz v1, :cond_1dd
++
++    invoke-virtual {v1, v0}, Landroidx/preference/Preference;->setEnabled(Z)V
++
++    :cond_1dd
+     invoke-super {p0, p1, p2}, Lcom/android/camera/fragment/settings/CameraPreferenceFragment;->onPreferenceChange(Landroidx/preference/Preference;Ljava/lang/Object;)Z
+ 
+     return v4
+ 
+     nop
+ 
+-    :sswitch_data_1be
++    :sswitch_data_1e2
+     .sparse-switch
+         -0x105c3be1 -> :sswitch_4c
+         0x3175697c -> :sswitch_41
+         0x7b5de9e4 -> :sswitch_36
+     .end sparse-switch
+ 
+-    :pswitch_data_1cc
++    :pswitch_data_1f0
+     .packed-switch 0x0
+         :pswitch_12b
+         :pswitch_10d
+@@ -1431,6 +1510,31 @@
+     invoke-virtual {p0, v0}, Lmiuix/preference/PreferenceFragment;->s9(Ljava/lang/String;)V
+ 
+     :cond_6f
++    invoke-static {}, LY/a;->f()Le0/p;
++
++    move-result-object v0
++
++    const-string v1, "pref_monet_color_key"
++
++    const/4 v2, 0x1
++
++    invoke-virtual {v0, v1, v2}, Lb9/a;->g(Ljava/lang/String;Z)Z
++
++    move-result v0
++
++    xor-int/lit8 v0, v0, 0x1
++
++    const-string v1, "pref_tint_color"
++
++    invoke-virtual {p0, v1}, Landroidx/preference/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
++
++    move-result-object v1
++
++    if-eqz v1, :cond_87
++
++    invoke-virtual {v1, v0}, Landroidx/preference/Preference;->setEnabled(Z)V
++
++    :cond_87
+     return-void
+ .end method
+ 
+@@ -1586,17 +1690,33 @@
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+     :cond_26
++    invoke-static {}, LY/a;->f()Le0/p;
++
++    move-result-object v1
++
++    const-string v2, "pref_monet_color_key"
++
++    const/4 v0, 0x1
++
++    invoke-virtual {v1, v2, v0}, Lb9/a;->g(Ljava/lang/String;Z)Z
++
++    move-result v1
++
++    xor-int/lit8 v1, v1, 0x1
++
+     const-string v0, "pref_tint_color"
+ 
+     invoke-virtual {p0, v0}, Landroidx/preference/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_31
++    if-eqz v0, :cond_41
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+-    :cond_31
++    invoke-virtual {v0, v1}, Landroidx/preference/Preference;->setEnabled(Z)V
++
++    :cond_41
+     const-string v0, "custom_shutter_sound_key"
+ 
+     invoke-virtual {p0, v0}, Landroidx/preference/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+@@ -1607,7 +1727,7 @@
+ 
+     iput-object v0, p0, Lcom/android/camera/fragment/settings/CameraCommonPreferenceFragment;->d0:Lcom/android/camera/ui/ValuePreference;
+ 
+-    if-eqz v0, :cond_5f
++    if-eqz v0, :cond_6f
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+@@ -1641,7 +1761,7 @@
+ 
+     invoke-virtual {v1, v0}, Lmiuix/preference/TextPreference;->setText(Ljava/lang/String;)V
+ 
+-    :cond_5f
++    :cond_6f
+     iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     const-string v1, "pref_camera_volume_function_key"
+@@ -1650,22 +1770,22 @@
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_6c
++    if-eqz v0, :cond_7c
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+-    :cond_6c
++    :cond_7c
+     const-string v0, "pref_custom_shutter_button"
+ 
+     invoke-virtual {p0, v0}, Landroidx/preference/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_77
++    if-eqz v0, :cond_87
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+-    :cond_77
++    :cond_87
+     iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     const-string v1, "pref_retain_camera_status_key"
+@@ -1674,11 +1794,11 @@
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_84
++    if-eqz v0, :cond_94
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+-    :cond_84
++    :cond_94
+     iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     const-string v1, "pref_other_setting"
+@@ -1687,11 +1807,11 @@
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_91
++    if-eqz v0, :cond_a1
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+ 
+-    :cond_91
++    :cond_a1
+     iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     const-string v1, "pref_camera_recordlocation_key"
+@@ -1702,11 +1822,11 @@
+ 
+     iput-object v0, p0, Lcom/android/camera/fragment/settings/CameraCommonPreferenceFragment;->e0:Landroidx/preference/Preference;
+ 
+-    if-eqz v0, :cond_a0
++    if-eqz v0, :cond_b0
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+ 
+-    :cond_a0
++    :cond_b0
+     iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
+ 
+     const-string v1, "pref_priority_storage"
+@@ -1715,10 +1835,23 @@
+ 
+     move-result-object v0
+ 
+-    if-eqz v0, :cond_ad
++    if-eqz v0, :cond_bd
+ 
+     invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+ 
+-    :cond_ad
++    :cond_bd
++    iget-object v0, p0, Lcom/android/camera/fragment/settings/BasePreferenceFragment;->w:Landroidx/preference/PreferenceScreen;
++
++    const-string v1, "pref_monet_color_key"
++
++    invoke-virtual {v0, v1}, Landroidx/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_ca
++
++    invoke-virtual {v0, p0}, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
++
++    :cond_ca
+     return-void
+ .end method
