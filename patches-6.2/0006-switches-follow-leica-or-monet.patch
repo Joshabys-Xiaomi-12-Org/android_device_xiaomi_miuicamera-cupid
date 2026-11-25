@@ -1,0 +1,18 @@
+From: miuicamera-cupid
+Subject: [PATCH 6/6] Make all switches dynamically follow Monet (when active) or Leica/Camera color
+
+1. com.android.camera.data.data.t (classes.dex):
+   - Add getSwitchColor(Context): returns Monet accent (system_accent1_400 in dark
+     mode / system_accent1_600 in light mode for crisp contrast with white switch
+     thumbs) when "pref_monet_color_key" is enabled, or t.v() (Leica Red by default,
+     or user-selected "pref_tint_color") when Monet is disabled.
+   - Add refreshSwitches(View): recursively invalidates child views so toggling
+     "pref_monet_color_key" or returning from the color picker refreshes all
+     visible switches immediately without interrupting spring animations.
+
+2. vh.b / SlidingButtonHelper (classes6.dex):
+   - Dynamically tint SlidingButton, SlidingSwitch, and SlidingSwitchCompat ON
+     tracks using t.getSwitchColor(Context) on initialization and draw.
+
+3. com.android.camera.ui.ToggleSwitch (classes2.dex):
+   - Replace hardcoded #ff00a8ff thumb color in onDraw() with t.getSwitchColor(Context).
