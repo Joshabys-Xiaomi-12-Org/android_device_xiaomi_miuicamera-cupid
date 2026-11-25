@@ -1,0 +1,13 @@
+From: miuicamera-cupid
+Subject: [PATCH 5/5] Add in-app Monet dynamic color switch and disable manual color picker when active
+
+1. com.android.camera.data.data.t.v():
+   Check DataItemGlobal boolean "pref_monet_color_key" (default true).
+   When enabled, return Global.getApplication().getColor(android.R.color.system_accent1_200)
+   (0x0106003b). When disabled, fall through to stock "pref_tint_color" selection
+   so all 12 stock colors (including Leica Red) work untouched.
+
+2. CameraCommonPreferenceFragment (Wa, te, onResume, onPreferenceChange):
+   Add CheckBoxPreference "pref_monet_color_key" right above "pref_tint_color"
+   (localized in pt/en), and automatically call setEnabled(!isMonet) on
+   "pref_tint_color" both on screen load and live when toggled.

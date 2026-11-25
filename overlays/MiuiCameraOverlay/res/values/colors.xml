@@ -4,19 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Monet dynamic accent for Leica/Camera viewfinder UI -->
-    <color name="tint_color_red_depth1">@android:color/system_accent1_200</color>
-    <color name="tint_color_red_depth2">@android:color/system_accent1_300</color>
-    <color name="tint_color_red_depth3">@android:color/system_accent1_400</color>
-    <color name="tint_color_red_depth4">@android:color/system_accent1_500</color>
-    <color name="camera_colorPrimary_select_color">@android:color/system_accent1_200</color>
-    <color name="color_highlight">@android:color/system_accent1_200</color>
-    <color name="main_yellow">@android:color/system_accent1_200</color>
-    <color name="focus_view_color">@android:color/system_accent1_200</color>
-    <color name="bottom_tip_selected_color">@android:color/system_accent1_200</color>
-    <color name="makeup_and_filter_item_when_halo_selector_cv">@android:color/system_accent1_300</color>
-    <color name="ocr_region_color">@android:color/system_accent1_200</color>
-
     <!-- Monet dynamic accent for MIUIX / Camera Settings UI -->
     <color name="Color_Theme">@android:color/system_accent1_600</color>
     <color name="accent_material_dark">@android:color/system_accent1_200</color>
