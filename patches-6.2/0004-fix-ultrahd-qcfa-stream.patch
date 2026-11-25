@@ -1,0 +1,31 @@
+From: miuicamera-cupid
+Subject: [PATCH 4/4] Fix Ultra HD (50MP) green/corrupted capture when remosaic is disabled
+
+The base zeus patch unconditionally forced w5.s0.x() (ShotParallelStill) to
+jump to stream 1 (8192x6144) because stream 5 is null in Portrait mode.
+However, in Ultra HD (50MP) low-light captures where shouldDoQCFA() returns
+false (apply remosaic capture request: false), the HAL outputs a binned
+4096x3072 frame into the 8192x6144 buffer, producing a 75% green / 25%
+doubled green image.
+
+Restore the remosaic check (w5/s0.C) and only fall back from stream 5 to
+stream 1 when stream 5 is null (preserving Portrait mode while letting Ultra HD
+use the 4096x3072 stream when remosaic is false).
+
+--- a/classes2.dex (w5.s0.x @ 0x897b6a)
++++ b/classes2.dex (w5.s0.x @ 0x897b6a)
+@@ -1,9 +1,8 @@
+-    goto :stream1                                       # 280d 0000
++    if-nez v2, :stream1                                 # 3902 0d00
+     iget-boolean v2, v13, Lw5/s0;.C:Z                   # 55d2 e2e1
+-    if-eqz v2, :stream5                                 # 3802 0300
+-    goto :stream1                                       # 2807
++    if-nez v2, :stream1                                 # 3902 0900
+ :stream5
+     const/4 v2, 0x5                                     # 1252
+     invoke-virtual {v5, v2}, Lw5/A0;.n:(I)Landroid/view/Surface;
+     move-result-object v2                               # 0c02
+-    goto :use_surface                                   # 2805
++    if-nez v2, :use_surface                             # 3902 0600
+ :stream1
+     invoke-virtual {v5, v8}, Lw5/A0;.n:(I)Landroid/view/Surface;

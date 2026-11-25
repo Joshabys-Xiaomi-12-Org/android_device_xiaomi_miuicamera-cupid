@@ -44,6 +44,9 @@ BYTE_PATCHES = [
 
     # --- 3. Leica watermark EXIF fallback when HAL lacks focalLength35mm ---
     ("classes5.dex", 0x3c95da, "5b7402040e00", "1308170028f1", "Gb.c.i(): focal<=0 fallback to 23mm instead of blanking EXIF"),
+
+    # --- 4. Fix Ultra HD (50MP) QCFA stream selection while keeping Portrait fallback ---
+    ("classes2.dex", 0x897b6a, "280d000055d2e2e138020300280712526e208fe325000c022805", "39020d0055d2e2e13902090012526e208fe325000c0239020600", "w5.s0.x(): use stream 5 when remosaic=false, fallback to stream 1 only if null"),
 ]
 
 
